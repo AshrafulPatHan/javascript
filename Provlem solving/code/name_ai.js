@@ -6,15 +6,32 @@
 
 
 // input user name
-const name = "mr ashraful";
+const name = "MR Ashraful";
 
 // male header
-let maleList = ["mr","md"]
+let maleList = ["mr","md","mr.","md.","MD","MR","MD.","MR."];
 // female header
-let femaleList = ["ms","angel"]
+let femaleList = ["ms","ms.","MS","MS.","akter"];
+
+
 
 function detectGender(name){
-    return name ;
+
+    // make this text an array
+    let array = name.split(' ');
+    
+    let isMale = array.some(item => maleList.includes(item)); // check male
+    let isFeMale = array.some(item => femaleList.includes(item)); // check female
+
+    // check male or female
+    if (isMale) {
+        return "Male" ; // return result
+    }else if (isFeMale) {
+        return "Female"
+    }else{
+        return "not found"
+    }
+    
 }
 
 console.log(detectGender(name));
