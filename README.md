@@ -1,4 +1,4 @@
-# learning javascrupt
+# learning javascript
 
-- javascript provlem 
+- javascript problem 
 - node js
