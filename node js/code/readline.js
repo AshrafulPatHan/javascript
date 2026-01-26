@@ -13,11 +13,10 @@ function OneNumber() {
         rl.close();
     });
 };
-// OneNumber()
+// OneNumber();
 
 
 // 🔹 একাধিক ইনপুট (C এর scanf("%d %d", &a, &b) এর মতো)
-
 function TwoNumber() {
     rl.question("Enter two numbers: ", function (input) {
         let [a, b] = input.split(" ").map(Number);
@@ -25,4 +24,4 @@ function TwoNumber() {
         rl.close();
     });
 }
-TwoNumber()
+TwoNumber();
