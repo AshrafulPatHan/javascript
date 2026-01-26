@@ -2,6 +2,7 @@
     tack stack :
         - javascript
         - node js
+        - bash
 
     users :
         - user ask a question.
@@ -43,7 +44,7 @@ let database = [
         answer: "I'm doing great, thank you for asking! I'm feeling energized and ready to help."
     }, {
         id: 5,
-        question: "what is you name",
+        question: "what is your name",
         answer: "Hello! It's great to meet you. My name is firebox, your AI thought partner."
     }, {
         id: 6,
@@ -133,7 +134,7 @@ Physical Integration: AI is becoming much more integrated into robotics and smar
         `
     }, {
         id: 10,
-        question: "what is  javascript",
+        question: "what is javascript",
         answer: `
         JavaScript (JS) is a versatile, high-level programming language that is primarily known as the "language of the web."
 
@@ -243,8 +244,34 @@ function inputQ() {
 inputQ();
 
 function processQ() {
-    // console.log("You question:", Question);
-    console.log(colorize('You question: ', Question).bgBlack);
+    console.log(colorize('You question: ', Question).bgBlack); // print: question ask by user
+
+    let _question = Question.toLowerCase(); // convert capital teller to small letter
+
+    let textsA = _question.split(' '); // split the text and make a array 
+
+    // run loop for find question
+    let i = 0;
+    let checkQ = false;
+
+    while (i<=database.length) {
+        if (_question === database[i]?.question) {
+            checkQ = true
+            break
+        }
+        i++
+    }
+
+    if (checkQ) {
+        console.log(colorize(database[i].answer).bgBlue);
+        
+    }else{
+        console.log("Sorry I don't know about this!");
+        
+    }
+
+    
+    
 
 }
 // processQ();
