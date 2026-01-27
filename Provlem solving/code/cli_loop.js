@@ -36,7 +36,16 @@ const colorize = (...args) => ({
   bgWhite: `\x1b[47m${args.join(" ")}\x1b[0m`,
 });
 
-rl.question("\x1b[33m-- Type a text: \x1b[0m", function (x) {
-  console.log(colorize("your text have : ", x.length, "letter").bgWhite);
-  rl.close();
-});
+function startLoop() {
+  rl.question("\x1b[33m-- Type a text: \x1b[0m", function (x) {
+    if (x.toLowerCase() === "exit") {
+      console.log("⚠️ App closed");
+      rl.close();
+      return;
+    }
+    console.log(colorize("your text have : ", x.length, "letter").bgWhite);
+
+    startLoop();
+  });
+}
+startLoop();
