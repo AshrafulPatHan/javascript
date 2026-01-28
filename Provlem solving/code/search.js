@@ -1,15 +1,8 @@
 /*
-    <------ not complete! ------->
     theme :
-        - there are a arrary object and there are index section have some pragraf
-        - user serch for a paragraf using title
-        - ai think which pragraf user serch and one pragraf he sugist
-    algrodim:
-        - database varivle have [{title:"",pragraf:""}]
-        - user serch a title
-        - js splite the text that user input and make array fo this text
-        - ai serch how many work is simeler to title text
-        - if there are tow reselt ai give user only one result
+        - user input some text base paragraph title
+        - search engin find by letter
+        - search chack each letter - like user type "a" engin check which paragraph title have a
 */
 
 let database = [
@@ -53,17 +46,15 @@ let database = [
 
 const readline = require("readline"); // start project
 
-let Question;
+let Paragraph;
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
 
-
 function inputQ() {
     rl.question("\x1b[33m-- Ask your question: \x1b[0m", function (x) {
-
         // check input
         if (x.toLowerCase() === "exit") {
             console.log("⚠️ App closed");
@@ -71,7 +62,7 @@ function inputQ() {
             return;
         }
 
-        Question = x;
+        Paragraph = x;
         // rl.close(); // for close rl function
         processQ(); // coll the process function
     });
@@ -79,30 +70,26 @@ function inputQ() {
 inputQ();
 
 function processQ() {
-    console.log(`\x1b[44mQuestion is: ${Question} \x1b[0m`) // output what i write
+    let _paragraph = Paragraph.toLowerCase(); // convart the quistion letter to Lower Case
+    let _letter = _paragraph.split(" "); // convart the text into array
 
-    let _question = Question.toLowerCase();// convart the quistion letter to Lower Case
-    let _letter = _question.split(" "); // convart the text into array
+    const findParagraph = database.filter((data) =>
+        data.title.toLocaleLowerCase().includes(_paragraph),
+    );
 
-    /*
-        need :
-            i need to make user input and all title as array
-            then chech how much mach the tow array
-            if any tow array (user input and title) is mach some point paragraf is show
-            if any title is not mach with user input ai print: "Sorry I don't know about this!"
-        do :
-            first get user input and splite text
-            chech how much text on this user input
-            start a loot chech with first element on user input and go first,secend,thard and how many text
-            chech if any text mach with user input text set this on chech array
-            then after compliting loop check how much data on chech array vs user input data
-            which title is mach mostly get this data and oputput this paragraph
-            if data is not mach then remove some keyword text like how ,what ,when
-    */
+    console.log(
+        `\x1b[44mSearch for : ${Paragraph} ! Restul length : ${findParagraph.length} \x1b[0m`,
+    ); // output what i write
 
 
-
-    console.log("\x1b[47m\x1b[34mAnswer :\x1b[0m",`\x1b[42m${_letter} \x1b[0m`,); // answer output
+    if (findParagraph.length === 0) {
+        console.log("\x1b[41mNo matching title found\x1b[0m");
+    } else {
+        findParagraph.map((i) => {
+            console.log("\n\x1b[46mTitle:\x1b[0m", i.title);
+            console.log("\x1b[42mParagraph:\x1b[0m", i.paragraph);
+        });
+    }
 
     inputQ(); // call the read function again
 }
