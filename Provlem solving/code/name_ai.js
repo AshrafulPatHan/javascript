@@ -1,7 +1,7 @@
 /*
-    user input a name 
+    user input a name
     Ai detect the name is mal name for female name
-    print - male/female 
+    print - male/female
 */
 
 
@@ -19,7 +19,7 @@ function detectGender(name){
 
     // make this text an array
     let array = name.split(' ');
-    
+
     let isMale = array.some(item => maleList.includes(item)); // check male
     let isFeMale = array.some(item => femaleList.includes(item)); // check female
 
@@ -31,11 +31,7 @@ function detectGender(name){
     }else{
         return "not found"
     }
-    
+
 }
 
 console.log(detectGender(name));
-
-
-
-
