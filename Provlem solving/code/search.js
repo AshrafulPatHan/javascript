@@ -54,7 +54,7 @@ const rl = readline.createInterface({
 });
 
 function inputQ() {
-    rl.question("\x1b[33m-- Ask your question: \x1b[0m", function (x) {
+    rl.question("\x1b[33m-- search your paragraph : \x1b[0m", function (x) {
         // check input
         if (x.toLowerCase() === "exit") {
             console.log("⚠️ App closed");
