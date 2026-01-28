@@ -83,6 +83,13 @@ function processQ() {
     let _question = Question.toLowerCase();// convart the quistion letter to Lower Case
     let _letter = _question.split(" "); // convart the text into array
 
+    /*
+        i need to make user input and all title as array
+        then chech how much mach the tow array
+        if any tow array (user input and title) is mach some point paragraf is show
+        if any title is not mach with user input ai print: "Sorry I don't know about this!"
+    */
+
     console.log("\x1b[47m\x1b[34mAnswer :\x1b[0m",`\x1b[42m${database[0].paragraph} \x1b[0m`,); // answer output
 
     inputQ(); // call the read function again
