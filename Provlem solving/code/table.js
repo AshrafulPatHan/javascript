@@ -61,20 +61,53 @@ ${head.join(" | ")}
 
 
 ${column.map((user) => {
-    let allName = user.name + " | " + " ";
-    let allEmail = user.email + " | " + " ";
-    let allPhone = user.phone + " | " + " ";
+                let allName = user.name + " | " + " ";
+                let allEmail = user.email + " | " + " ";
+                let allPhone = user.phone + " | " + " ";
 
-    return (allName  + allEmail + allPhone + "\n") // column data
-})}
+                return (allName + allEmail + allPhone + "\n") // column data
+            })}
 
 
         `
         );
-        
+
 
     };
-    Output2();
+    // Output2();
+
+    //🪦 option 3
+    function Output3() {
+        let head = ['name', 'email', 'phone'];
+        let column = [
+            ['kamal', 'kamal@gmal.com', '0919368'],
+            ['jamal', 'jamal@gmal.com', '0942736'],
+            ['sofik', 'sofik@gmal.com', '0921569']
+        ];
+
+        console.log(
+            `
+
+${head.join(" | ")}
+
+${
+    column[0].join(" | ")
+}
+
+${
+    column[1].join(" | ")
+}
+
+${
+    column[2].join(" | ")
+}
+
+        `
+        );
+
+
+    };
+    Output3();
 }
 MyTable();
 
