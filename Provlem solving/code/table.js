@@ -1,3 +1,5 @@
+//  <----------------- not compleat ----------------------->
+
 /*
     Theme:
         - user input some data
@@ -17,14 +19,15 @@
 // 🚀 method 1
 
 function MyTable() {
-    let head = ['name', 'email', 'phone'];
-    let column = [
-        ['kamal', 'kamal@gmal.com', '0919368'],
-        ['jamal', 'jamal@gmal.com', '0942736'],
-        ['sofik', 'sofik@gmal.com', '0921569']
-    ];
 
+    // 🪦 option 1
     function Output1() {
+        let head = ['name', 'email', 'phone'];
+        let column = [
+            ['kamal', 'kamal@gmal.com', '0919368'],
+            ['jamal', 'jamal@gmal.com', '0942736'],
+            ['sofik', 'sofik@gmal.com', '0921569']
+        ];
         console.log(
             `
 
@@ -40,8 +43,38 @@ function MyTable() {
     `
         );
     }
-    Output1()
+    // Output1()
 
+    //🪦 option 2
+    function Output2() {
+        let head = ['name', 'email', 'phone'];
+        let column = [
+            { name: 'kamal', email: 'kamal@gmal.com', phone: "0919368" },
+            { name: 'jamal', email: 'jamal@gmal.com', phone: '0942736' },
+            { name: 'sofik', email: 'sofik@gmal.com', phone: '0921569' }
+
+        ];
+
+        console.log(
+            ` 
+${head.join(" | ")}
+
+
+${column.map((user) => {
+    let allName = user.name + " | " + " ";
+    let allEmail = user.email + " | " + " ";
+    let allPhone = user.phone + " | " + " ";
+
+    return (allName  + allEmail + allPhone + "\n") // column data
+})}
+
+
+        `
+        );
+        
+
+    };
+    Output2();
 }
 MyTable();
 
