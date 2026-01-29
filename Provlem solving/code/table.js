@@ -85,29 +85,42 @@ ${column.map((user) => {
             ['sofik', 'sofik@gmal.com', '0921569']
         ];
 
+
         console.log(
-            `
-
-${head.join(" | ")}
-
-${
-    column[0].join(" | ")
-}
-
-${
-    column[1].join(" | ")
-}
-
-${
-    column[2].join(" | ")
-}
-
-        `
+            `${head.join(" | ")}`
         );
+
+        for (let i = 0; i < column.length; i++) {
+            console.log(
+
+                column[i].join(" | ")
+            );
+
+        }
 
 
     };
-    Output3();
+    // Output3();
+
+    //🪦 option 4
+    function Output4() {
+        let column = [
+            ['name', 'email', 'phone'],
+            ['kamal', 'kamal@gmal.com', '0919368'],
+            ['jamal', 'jamal@gmal.com', '0942736'],
+            ['sofik', 'sofik@gmal.com', '0921569']
+        ];
+
+
+        for (let i = 0; i < column.length; i++) {
+            console.log(
+
+                column[i].join(" | ")
+            );
+
+        }
+    };
+    Output4();
 }
 MyTable();
 
