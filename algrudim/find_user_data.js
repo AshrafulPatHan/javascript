@@ -371,7 +371,7 @@ function FindUser(array) {
     // chek the inpute type
     if (typeof input === "number" ){
         result = array.find(user => user.id === input);
-        
+
     }else if(typeof Number(input.slice(3)) === "number" && Number(input.slice(3)) > 10 && input[0] === "+" ) {
         result = array.find(user => user.phone === input);
 
@@ -379,16 +379,11 @@ function FindUser(array) {
         result = array.find(user => user.email === input);
 
     }else if( typeof input === "string"){
-        result = array.find(user => user.name === input);  
+        result = array.find(user => user.name === input);
 
     }
 
     console.log(result);
-    
+
 }
 FindUser(array);
-
-
-
-
-

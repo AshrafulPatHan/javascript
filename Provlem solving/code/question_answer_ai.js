@@ -258,6 +258,7 @@ function inputQ() {
 }
 inputQ();
 
+  
 function processQ() {
   console.log(colorize("You question: ", Question).bgBlack); // print: question ask by user
 
