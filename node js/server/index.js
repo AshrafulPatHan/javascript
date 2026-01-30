@@ -92,6 +92,5 @@ run().catch(console.dir);
 
 
 
-// Furniro
-// 7sL3jqGeLVMyM8Qe
+
 // nodemon index.js
