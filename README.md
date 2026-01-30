@@ -73,4 +73,4 @@ If you find this repository useful:
 
 If you have ideas, suggestions, or feedback — feel free to open an issue or contribute directly.
 
-Happy Coding! 💻🔥
+⭐Happy Coding! 💻🔥
