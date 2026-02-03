@@ -63,7 +63,7 @@ You can:
 ## ⭐ Support
 
 If you find this repository useful:
-- Give it a ⭐ star
+- Give it a ⭐ star on repository
 - Share it with others
 - Contribute to make it better  
 
